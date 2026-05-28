@@ -1,6 +1,25 @@
-# maths_lib_
+# Fina Maths Lib
 
-Deterministic financial mathematics library built from PDR with explicit formula functions and registry-backed lookup.
+Deterministic financial mathematics library for FinBench with explicit formula functions and registry-backed lookup.
+
+## Library Name
+
+- **PyPI/Package name:** `fina-maths-lib`
+- **Python import name:** `maths_lib`
+
+## Parent Repository
+
+This library is prepared as a sub-module/component for:
+
+- [vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System](https://github.com/vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System.git)
+
+## Author
+
+- **Potheesh Vignesh K**
+
+## Contact
+
+- **Email:** `kpotheeshvignesh@gmail.com`
 
 ## Highlights
 
@@ -25,6 +44,14 @@ python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
 ```
 
+## Build Package
+
+```powershell
+.\.venv\Scripts\python -m build
+```
+
+Note: run only `python -m build` (do not append extra words like `success`).
+
 ## Run Tests
 
 ```powershell
@@ -36,10 +63,7 @@ python -m venv .venv
 ```python
 import maths_lib as ml
 
-# total formulas
 print(len(ml.FORMULA_REGISTRY))
-
-# call a formula
 result = ml.FORMULA_REGISTRY["gross_margin"](revenue=1000, cogs=600)
 print(result.value, result.valid)
 ```

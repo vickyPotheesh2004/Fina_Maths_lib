@@ -1,40 +1,43 @@
 # Fina Maths Lib
 
-Deterministic financial mathematics library for FinBench with explicit formula functions and registry-backed lookup.
+Deterministic financial mathematics library for FinBench, built to move formula execution away from LLM memory and into auditable, deterministic Python functions.
 
-## Library Name
+## Package Identity
 
-- **PyPI/Package name:** `fina-maths-lib`
-- **Python import name:** `maths_lib`
+- Package name (PyPI): `fina-maths-lib`
+- Import name (Python): `maths_lib`
+- Current release: `0.1.1`
+- PyPI: https://pypi.org/project/fina-maths-lib/
 
-## Parent Repository
+## FinBench Context
 
-This library is prepared as a sub-module/component for:
+This library is prepared as a core computation component for:
 
-- [vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System](https://github.com/vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System.git)
+- https://github.com/vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System
 
 ## Author
 
-- **Potheesh Vignesh K**
+- Potheesh Vignesh K
+- Contact: `kpotheeshvignesh@gmail.com`
 
-## Contact
+## Why This Library Exists
 
-- **Email:** `kpotheeshvignesh@gmail.com`
+LLMs are good orchestrators but not always reliable calculators for multi-step finance arithmetic. `fina-maths-lib` provides deterministic formula execution so FinBench agents can call tested functions instead of estimating formulas in prompt space.
 
 ## Highlights
 
 - Total formulas: **1500**
-- Explicit formula functions (no hidden dynamic-only API)
-- Domain-wise module organization
-- Central registry for formula metadata and callable access
-- Deterministic test suite with uniqueness/overlap checks
+- Explicit function-per-formula implementation
+- Domain-wise modular architecture
+- Registry-backed function and metadata lookup
+- Deterministic test execution and uniqueness checks
 
 ## Project Structure
 
 - `src/maths_lib/` - source package
 - `tests/maths_lib/` - exhaustive tests
-- `PDR_maths_lib.md` - requirement document
-- `formula_registry.py` - source registry reference
+- `PDR_maths_lib.md` - product requirement/design reference
+- `formula_registry.py` - source formula catalog reference
 
 ## Setup
 
@@ -44,32 +47,44 @@ python -m venv .venv
 .\.venv\Scripts\python -m pip install -r requirements.txt
 ```
 
-## Build Package
-
-```powershell
-.\.venv\Scripts\python -m build
-```
-
-Note: run only `python -m build` (do not append extra words like `success`).
-
 ## Run Tests
 
 ```powershell
 .\.venv\Scripts\python -m pytest tests\ -v
 ```
 
-## Registry Usage
+## Build and Publish
+
+Build package artifacts:
+
+```powershell
+python -m build
+```
+
+Upload to PyPI:
+
+```powershell
+python -m twine upload dist/*
+```
+
+Install from PyPI:
+
+```powershell
+pip install fina-maths-lib
+```
+
+## Quick Usage
 
 ```python
 import maths_lib as ml
 
-print(len(ml.FORMULA_REGISTRY))
+print(len(ml.FORMULA_REGISTRY))  # expected: 1500
 result = ml.FORMULA_REGISTRY["gross_margin"](revenue=1000, cogs=600)
 print(result.value, result.valid)
 ```
 
 ## Notes
 
-- Formula IDs are unique across all domains.
-- Expressions are evaluated via deterministic expression engine in `base.py`.
-- Tests include per-formula deterministic execution and registry integrity checks.
+- Formula IDs are enforced unique across all domains.
+- Expressions are evaluated through a deterministic engine in `base.py`.
+- Tests cover per-formula execution determinism and registry integrity.

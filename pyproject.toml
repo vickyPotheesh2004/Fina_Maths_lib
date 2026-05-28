@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "fina-maths-lib"
-version = "0.1.0"
+version = "0.1.1"
 description = "Deterministic financial maths formula library"
 readme = "README.md"
 requires-python = ">=3.10"
@@ -12,7 +12,8 @@ dependencies = []
 authors = [
   { name = "Fina Maths Lib Contributors" }
 ]
-license = { text = "Proprietary" }
+license = "LicenseRef-Proprietary"
+license-files = ["LICENSE"]
 keywords = ["finance", "quant", "math", "formulas", "analytics"]
 classifiers = [
   "Programming Language :: Python :: 3",
@@ -21,8 +22,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-org/fina_maths_lib"
-Repository = "https://github.com/your-org/fina_maths_lib"
+Homepage = "https://github.com/vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System"
+Repository = "https://github.com/vickyPotheesh2004/finbench_agent-Multi_Agent_Business_Analyst_System"
 
 [tool.setuptools]
 package-dir = {"" = "src"}
